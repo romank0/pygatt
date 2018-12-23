@@ -200,6 +200,8 @@ class BGAPIBackend(BLEBackend):
         self._ser.flush()
         self._ser.close()
 
+        time.sleep(2)
+
         self._open_serial_port()
         self._receiver = threading.Thread(target=self._receive)
         self._receiver.daemon = True
